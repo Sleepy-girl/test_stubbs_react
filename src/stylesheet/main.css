@@ -14,8 +14,7 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-family: "Raleway", sans-serif;
 }
 
 img {
@@ -35,8 +34,7 @@ p {
   padding: 0;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
 }
 
