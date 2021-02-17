@@ -3,14 +3,14 @@ import { colors } from "../../stylesheet/vars";
 
 export const NavigationStyled = styled.nav`
   position: relative;
-  /* width: 100%;
-  height: 580px; */
+  .container,
   .wrapperMenu {
     display: flex;
+    flex-wrap: wrap;
   }
   span {
     color: ${colors.textHover};
-    margin-right: 144px;
+    margin-right: 142px;
   }
   .flagList {
     display: flex;
@@ -42,6 +42,9 @@ export const NavigationStyled = styled.nav`
       background: ${colors.background};
       padding-top: 15px;
 
+      /* .wrapperMenu {
+        width: 328px;
+      } */
       a {
         color: ${colors.textMain};
       }

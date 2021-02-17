@@ -3,8 +3,10 @@ import { colors } from "../../stylesheet/vars";
 
 export const HeaderStyled = styled.header`
   .container {
+    width: 328px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
     height: 60px;
   }
 
