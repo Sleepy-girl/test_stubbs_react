@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
 
-export const ServicesStyled = styled.section`
-  margin-bottom: 30px;
+export const OurCompanyStyled = styled.section`
   h3 {
     text-align: center;
     font-weight: 500;
@@ -18,60 +17,57 @@ export const ServicesStyled = styled.section`
     background-color: ${colors.decor};
     margin: 5px auto 20px;
   }
-  ul {
-    width: 328px;
-    margin: 0 auto 15px;
-  }
   li {
     position: relative;
-    display: inline-block;
-    height: 105px;
-    width: 159px;
+    width: 360px;
+    margin: 0 auto;
   }
-  li:nth-child(odd) {
-    margin-right: 10px;
-  }
-  li:not(:nth-last-child(-n + 2)) {
-    margin-bottom: 10px;
-  }
-  img {
-    height: 105px;
-    width: 159px;
+  li:not(:last-child) {
+    margin-bottom: 20px;
   }
   h4 {
     position: absolute;
-    bottom: 48px;
-    height: 36px;
-    width: 150px;
+    bottom: 28px;
+    height: 180px;
+    width: 326px;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 20px;
+    line-height: 23px;
     color: ${colors.textMain};
     background-color: ${colors.substrate};
-    padding: 4px 16px 4px 6px;
+    /* padding: 15px 20 15px 16px; */
+  }
+  .whyWe {
+    padding-left: 16px;
+  }
+  .advantages {
+    padding-left: 65px;
+    right: 0;
   }
   h4::after {
     display: block;
     content: "";
     position: absolute;
     top: 0;
-    right: 10px;
-    height: 23px;
+    height: 100px;
     width: 2px;
     background-color: ${colors.decor};
     z-index: 5;
   }
-  div {
-    width: 328px;
-    height: 36px;
-    text-align: center;
-    background: ${colors.background};
-    margin: 0 auto;
+  .whyWe::after {
+    right: 20px;
   }
-  span {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 36px;
+  .advantages::after {
+    left: 20px;
+  }
+  p {
+    width: 260px;
+    font-size: 12px;
+    line-height: 16px;
     color: ${colors.textMain};
+  }
+  h4,
+  p {
+    padding-top: 15px;
   }
 `;
