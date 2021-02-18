@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../footer/Footer";
 import OurCompany from "../ourCompany/OurCompany";
 import Services from "../services/Services";
@@ -12,9 +12,22 @@ const menu = [
   { text: "Контакты", linkOnComp: <Footer /> },
 ];
 
-const flags = ["#iconFlagOfRussia", "#iconFlagOfUkraine", "#iconUnitedKingdom"];
+const flagsIcon = [
+  "#iconFlagOfRussia",
+  "#iconFlagOfUkraine",
+  "#iconUnitedKingdom",
+];
+
+const initialState = {
+  isActive: true,
+};
 
 function Navigation() {
+  const [flagActive, setFlags] = useState(initialState);
+  const handleOnClick = (e) => {
+    const { id } = e.target;
+    setFlags({ [id]: !flagActive[id] });
+  };
   return (
     <NavigationStyled>
       <div className="mobileMenu desktopMenu">
@@ -22,10 +35,13 @@ function Navigation() {
           <div className="wrapperMenu">
             <span>Меню</span>
             <ul className="flagList">
-              {flags.map((flag) => (
-                <li className="flagElem" key={flag}>
-                  <svg className="flagIcons apacity">
-                    <use href={sprite + flag} />
+              {flagsIcon.map((flagIcon) => (
+                <li className="flagElem" key={flagIcon}>
+                  <svg
+                    id={flagIcon}
+                    className={`flagIcons ${flagActive.isActive && `apacity`}`}
+                  >
+                    <use onClick={handleOnClick} href={sprite + flagIcon} />
                   </svg>
                 </li>
               ))}
@@ -35,7 +51,9 @@ function Navigation() {
           <ul className="menuList">
             {menu.map((elem) => (
               <li className="menuElem" key={elem.text}>
-                <a href={elem.linkOnComp}>{elem.text}</a>
+                <a className="menuLink" href={elem.linkOnComp}>
+                  {elem.text}
+                </a>
               </li>
             ))}
           </ul>

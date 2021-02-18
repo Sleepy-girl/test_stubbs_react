@@ -41,16 +41,34 @@ export const NavigationStyled = styled.nav`
       height: 580px;
       background: ${colors.background};
       padding-top: 15px;
+      transform: translate(-100%);
+      /* transition: background-position 3000ms translate(100%); */
+      /* cubic-bezier(0.455, 0.03, 0.515, 0.955); */
 
-      /* .wrapperMenu {
+      .wrapperMenu::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: ${colors.decorMenu};
+        margin-bottom: 20px;
+      }
+      .menuElem::after {
+        display: block;
+        content: "";
         width: 328px;
-      } */
-      a {
+        height: 1px;
+        background-color: ${colors.decorMenu};
+        margin-top: 20px;
+      }
+      .menuElem:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+      .menuLink {
         color: ${colors.textMain};
       }
-      /* .flagElem:not(:last-of-type) {
-        margin-right: 20px;
-      } */
+      .menuLink:hover {
+        color: ${colors.textHover};
+      }
     }
   }
 

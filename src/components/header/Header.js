@@ -9,6 +9,7 @@ function Header() {
     <HeaderStyled>
       <div className="container">
         <img className="logo" src={logo} alt="logo" height="56" />
+        {/* <input type="text" name="search" value="seach" onChange /> */}
         <svg>
           <use href={sprite + `#iconSearch`} />
         </svg>
