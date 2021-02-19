@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Navigation from "../navigation/Navigation";
 import logo from "../../assets/images/logo.png";
 import sprite from "../../assets/images/icons-sprite.svg";
+import useDeviceSizes from "../../hooks/useDeviceSizes";
 import { HeaderStyled } from "./HeaderStyled";
+import Flags from "../navigation/Flags";
 
 const initialState = {
   isShowSearch: false,
@@ -11,6 +13,7 @@ const initialState = {
 
 function Header() {
   const [state, setstate] = useState(initialState);
+  const { isMobileDevice, isDesktopDevice } = useDeviceSizes();
 
   const handleClick = (id) => {
     setstate({ ...state, [id]: !state[id] });
@@ -20,7 +23,7 @@ function Header() {
     <HeaderStyled>
       <div className="container">
         <img className="logo" src={logo} alt="logo" height="56" />
-
+        {isDesktopDevice && <Navigation />}
         <div className="searchWrapper">
           <input
             className={state.isShowSearch ? "inputAnimate" : ""}
@@ -38,34 +41,37 @@ function Header() {
             </svg>
           </div>
         </div>
+        {isDesktopDevice && <Flags />}
 
-        <ul
-          className="wrapperBurger"
-          id="isShowNavigation"
-          onClick={() => handleClick("isShowNavigation")}
-        >
-          <li
-            className={
-              !state.isShowNavigation
-                ? "elemOfBurger firstElemOfBurger"
-                : "firstElemOfCross"
-            }
-          />
-          <li
-            className={
-              !state.isShowNavigation
-                ? "elemOfBurger secondElemOfBurger"
-                : "secondElemOfCross"
-            }
-          />
-          <li
-            className={
-              !state.isShowNavigation
-                ? "elemOfBurger thirdElemOfBurger"
-                : "thirdElemOfCross"
-            }
-          />
-        </ul>
+        {isMobileDevice && (
+          <ul
+            className="wrapperBurger"
+            id="isShowNavigation"
+            onClick={() => handleClick("isShowNavigation")}
+          >
+            <li
+              className={
+                !state.isShowNavigation
+                  ? "elemOfBurger firstElemOfBurger"
+                  : "firstElemOfCross"
+              }
+            />
+            <li
+              className={
+                !state.isShowNavigation
+                  ? "elemOfBurger secondElemOfBurger"
+                  : "secondElemOfCross"
+              }
+            />
+            <li
+              className={
+                !state.isShowNavigation
+                  ? "elemOfBurger thirdElemOfBurger"
+                  : "thirdElemOfCross"
+              }
+            />
+          </ul>
+        )}
       </div>
       {state.isShowNavigation && <Navigation />}
     </HeaderStyled>

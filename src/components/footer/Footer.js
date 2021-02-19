@@ -9,22 +9,66 @@ function Footer() {
         <li>
           <h4 className="title">О компании</h4>
           <ul className="columnList">
-            <li className="columnElem">Наши работы</li>
-            <li className="columnElem">Контакты</li>
-            <li className="columnElem">Доставка</li>
-            <li className="columnElem">Форма заказа</li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Наши работы
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Контакты
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Доставка
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Форма заказа
+              </a>
+            </li>
           </ul>
         </li>
         <li>
           <h4 className="title">Услуги</h4>
           <ul>
-            <li className="columnElem">Производство оборудования</li>
-            <li className="columnElem">Арт-объекты</li>
-            <li className="columnElem">Металлическая мебель</li>
-            <li className="columnElem">Металлообработка</li>
-            <li className="columnElem">Лазерная резка</li>
-            <li className="columnElem">Металлоконструкции</li>
-            <li className="columnElem">Аренда спецтехники</li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Производство оборудования
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Арт-объекты
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Металлическая мебель
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Металлообработка
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Лазерная резка
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Металлоконструкции
+              </a>
+            </li>
+            <li className="columnElem">
+              <a className="columnLink" href="#">
+                Аренда спецтехники
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -41,7 +85,7 @@ function Footer() {
         <ul className="iconList">
           {socialIcons.map((icon) => (
             <li className="iconElem" key={icon.id}>
-              <a href={icon.link}>
+              <a className="iconLink" href={icon.link}>
                 <svg>
                   <use href={icon.icon} />
                 </svg>

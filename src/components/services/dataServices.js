@@ -1,11 +1,11 @@
-import img1 from "../../assets/images/services/img1.jpg";
-import img2 from "../../assets/images/services/img2.jpg";
-import img3 from "../../assets/images/services/img3.jpg";
-import img4 from "../../assets/images/services/img4.jpg";
-import img5 from "../../assets/images/services/img5.jpg";
-import img6 from "../../assets/images/services/img6.jpg";
-import img7 from "../../assets/images/services/img7.jpg";
-import img8 from "../../assets/images/services/img8.jpg";
+import img1 from "../../assets/images/services/mobile/img1.jpg";
+import img2 from "../../assets/images/services/mobile/img2.jpg";
+import img3 from "../../assets/images/services/mobile/img3.jpg";
+import img4 from "../../assets/images/services/mobile/img4.jpg";
+import img5 from "../../assets/images/services/mobile/img5.jpg";
+import img6 from "../../assets/images/services/mobile/img6.jpg";
+import img7 from "../../assets/images/services/mobile/img7.jpg";
+import img8 from "../../assets/images/services/mobile/img8.jpg";
 
 export const elems = [
   { id: 1, title: "Производство оборудования", img: img1 },

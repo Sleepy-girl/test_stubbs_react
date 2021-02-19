@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
+import { size } from "../../common/deviceSizes";
 
 export const OurCompanyStyled = styled.section`
   h3 {
@@ -69,5 +70,8 @@ export const OurCompanyStyled = styled.section`
   h4,
   p {
     padding-top: 15px;
+  }
+
+  @media (min-width: ${size.desktop}) {
   }
 `;

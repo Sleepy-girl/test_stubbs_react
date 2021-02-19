@@ -1,5 +1,7 @@
 import React from "react";
-import slide1 from "../../assets/images/slider/Rectangle.jpg";
+import useDeviceSizes from "../../hooks/useDeviceSizes";
+import slideMobile1 from "../../assets/images/slider/Rectangle.jpg";
+import slideDesktop1 from "../../assets/images/slider/slide1-desktop.jpg";
 import { SliderStyled } from "./SliderStyled";
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
@@ -17,9 +19,15 @@ import { SliderStyled } from "./SliderStyled";
 //   cssEase: "linear",
 // };
 function Slider() {
+  const { isMobileDevice } = useDeviceSizes();
+
   return (
     <SliderStyled>
-      <img src={slide1} alt="slide1" height="216" />
+      <img
+        src={isMobileDevice ? slideMobile1 : slideDesktop1}
+        alt="slide1"
+        height="216"
+      />
       <h2>
         Высокоточное изготовление
         <span>изделий из металла по чертежам</span>

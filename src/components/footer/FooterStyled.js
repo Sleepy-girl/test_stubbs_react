@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
+import { size } from "../../common/deviceSizes";
 
 export const FooterStyled = styled.footer`
   .wrapperList {
@@ -36,7 +37,7 @@ export const FooterStyled = styled.footer`
   .columnList::after {
     right: -5px;
   }
-  .columnElem {
+  .columnLink {
     font-size: 14px;
     line-height: 16px;
     color: ${colors.textHover};
@@ -98,5 +99,8 @@ export const FooterStyled = styled.footer`
     font-size: 14px;
     line-height: 14px;
     margin-bottom: 18px;
+  }
+
+  @media (min-width: ${size.desktop}) {
   }
 `;

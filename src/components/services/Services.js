@@ -15,7 +15,7 @@ function Services() {
         ))}
       </ul>
       <div>
-        <span>Расчет стоимости</span>
+        <button>Расчет стоимости</button>
       </div>
     </ServicesStyled>
   );

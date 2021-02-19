@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
+import { size } from "../../common/deviceSizes";
 
 export const SliderStyled = styled.section`
   position: relative;
@@ -25,14 +26,14 @@ export const SliderStyled = styled.section`
   span::before {
     display: block;
     content: "";
-    transform: translateX(-16px);
     height: 1px;
     width: 210px;
     background-color: ${colors.decorMenu};
+    transform: translateX(-16px);
   }
   ul {
-    display: flex;
     position: absolute;
+    display: flex;
     bottom: 10px;
     left: 149px;
   }
@@ -48,5 +49,38 @@ export const SliderStyled = styled.section`
   }
   li:not(:last-child) {
     margin-right: 10px;
+  }
+  @media (min-width: ${size.desktop}) {
+    height: 448px;
+    width: 1360px;
+    margin-bottom: 30px;
+
+    h2 {
+      height: 260px;
+      width: 751px;
+      bottom: 94px;
+      padding: 65px 0 65px 90px;
+    }
+    h2,
+    span {
+      font-size: 40px;
+      line-height: 65px;
+    }
+    span::before {
+      height: 2px;
+      width: 642px;
+      transform: translateX(-90px);
+    }
+    ul {
+      bottom: 15px;
+      left: 630px;
+    }
+    li {
+      width: 14px;
+      height: 14px;
+    }
+    li:not(:last-child) {
+      margin-right: 15px;
+    }
   }
 `;

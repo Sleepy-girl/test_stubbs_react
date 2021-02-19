@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
+import { size } from "../../common/deviceSizes";
 
 export const ServicesStyled = styled.section`
   margin-bottom: 30px;
@@ -62,16 +63,22 @@ export const ServicesStyled = styled.section`
     z-index: 5;
   }
   div {
+    text-align: center;
+  }
+
+  button {
     width: 328px;
     height: 36px;
-    text-align: center;
-    background: ${colors.background};
-    margin: 0 auto;
-  }
-  span {
-    font-weight: normal;
     font-size: 14px;
     line-height: 36px;
+    font-weight: normal;
     color: ${colors.textMain};
+    background: ${colors.background};
+  }
+  button:hover,
+  button:focus {
+    background: ${colors.substrate};
+  }
+  @media (min-width: ${size.desktop}) {
   }
 `;
