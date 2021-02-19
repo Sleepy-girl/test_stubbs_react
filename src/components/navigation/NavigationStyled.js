@@ -41,9 +41,7 @@ export const NavigationStyled = styled.nav`
       height: 580px;
       background: ${colors.background};
       padding-top: 15px;
-      transform: translate(-100%);
-      /* transition: background-position 3000ms translate(100%); */
-      /* cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+      z-index: 100;
 
       .wrapperMenu::after {
         content: "";

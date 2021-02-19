@@ -41,14 +41,16 @@ function Footer() {
         <ul className="iconList">
           {socialIcons.map((icon) => (
             <li className="iconElem" key={icon.id}>
-              <svg>
-                <use href={icon.icon} />
-              </svg>
+              <a href={icon.link}>
+                <svg>
+                  <use href={icon.icon} />
+                </svg>
+              </a>
             </li>
           ))}
         </ul>
         <span className="by">by</span>
-        <span className="stubbs">Stubbs</span>
+        <span className="stubbs">Anna Vygovska</span>
       </div>
     </FooterStyled>
   );
