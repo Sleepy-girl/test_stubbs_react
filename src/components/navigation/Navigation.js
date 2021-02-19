@@ -13,20 +13,26 @@ const menu = [
 ];
 
 const flagsIcon = [
-  "#iconFlagOfRussia",
-  "#iconFlagOfUkraine",
-  "#iconUnitedKingdom",
+  "iconFlagOfRussia",
+  "iconFlagOfUkraine",
+  "iconUnitedKingdom",
 ];
 
 const initialState = {
-  isActive: true,
+  iconFlagOfRussia: true,
+  iconFlagOfUkraine: false,
+  iconUnitedKingdom: false,
 };
 
 function Navigation() {
-  const [flagActive, setFlags] = useState(initialState);
-  const handleOnClick = (e) => {
-    const { id } = e.target;
-    setFlags({ [id]: !flagActive[id] });
+  const [flag, setFlags] = useState(initialState);
+  const handleClick = (id) => {
+    setFlags({
+      iconFlagOfRussia: false,
+      iconFlagOfUkraine: false,
+      iconUnitedKingdom: false,
+      [id]: true,
+    });
   };
   return (
     <NavigationStyled>
@@ -35,16 +41,63 @@ function Navigation() {
           <div className="wrapperMenu">
             <span>Меню</span>
             <ul className="flagList">
-              {flagsIcon.map((flagIcon) => (
-                <li className="flagElem" key={flagIcon}>
+              {console.log("flag.iconFlagOfRussia", flag.iconFlagOfRussia)}
+              {console.log("flag.iconFlagOfUkraine", flag.iconFlagOfUkraine)}
+              {console.log("flag.iconUnitedKingdom", flag.iconUnitedKingdom)}
+              <li className="flagElem">
+                <svg
+                  id="iconFlagOfRussia"
+                  className={`flagIcons ${!flag.iconFlagOfRussia && "apacity"}`}
+                >
+                  <use
+                    onClick={() => handleClick("iconFlagOfRussia")}
+                    href={sprite + "#iconFlagOfRussia"}
+                  />
+                </svg>
+              </li>
+              <li className="flagElem">
+                <svg
+                  id="iconFlagOfUkraine"
+                  className={`flagIcons ${
+                    !flag.iconFlagOfUkraine && "apacity"
+                  }`}
+                >
+                  <use
+                    onClick={() => handleClick("iconFlagOfUkraine")}
+                    href={sprite + "#iconFlagOfUkraine"}
+                  />
+                </svg>
+              </li>
+              <li className="flagElem">
+                <svg
+                  id="iconUnitedKingdom"
+                  className={`flagIcons ${
+                    !flag.iconUnitedKingdom && "apacity"
+                  }`}
+                >
+                  <use
+                    onClick={() => handleClick("iconUnitedKingdom")}
+                    href={sprite + "#iconUnitedKingdom"}
+                  />
+                </svg>
+              </li>
+              {/* {flagsIcon.map((flagIcon) => ( */}
+              {/* <li className="flagElem" key={flagIcon}>
                   <svg
                     id={flagIcon}
-                    className={`flagIcons ${flagActive.isActive && `apacity`}`}
+                    className={`flagIcons ${
+                      !flag.iconFlagOfRussia && "apacityRu"
+                        ? !flag.iconFlagOfUkraine && "apacityUa"
+                        : !flag.iconUnitedKingdom && "apacityEn"
+                    }`}
                   >
-                    <use onClick={handleOnClick} href={sprite + flagIcon} />
+                    <use
+                      onClick={() => handleClick(flagIcon)}
+                      href={sprite + `#${flagIcon}`}
+                    />
                   </svg>
-                </li>
-              ))}
+                </li> */}
+              {/* ))} */}
             </ul>
           </div>
 

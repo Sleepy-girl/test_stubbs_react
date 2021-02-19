@@ -11,6 +11,7 @@ export const NavigationStyled = styled.nav`
   span {
     color: ${colors.textHover};
     margin-right: 142px;
+    margin-bottom: 15px;
   }
   .flagList {
     display: flex;
