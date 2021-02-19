@@ -1,19 +1,56 @@
 import React from "react";
-import { elems } from "./dataServices";
+import useDeviceSizes from "../../hooks/useDeviceSizes";
+import { elems, elemsDesktop } from "./dataServices";
 import { ServicesStyled } from "./ServicesStyled";
 
 function Services() {
+  const { isMobileDevice, isDesktopDevice } = useDeviceSizes();
+
   return (
     <ServicesStyled>
       <h3>Услуги</h3>
-      <ul>
-        {elems.map((elem) => (
-          <li key={elem.id}>
-            <img src={elem.img} alt={elem.title} height="105" />
-            <h4>{elem.title}</h4>
-          </li>
-        ))}
+      <ul className="fistPart">
+        {elems.map(
+          (elem) =>
+            (isDesktopDevice && elem.imgDesktop !== "#" && (
+              <li className="fistPartElem" key={elem.id}>
+                <img
+                  // className="fistPartImg"
+                  src={isMobileDevice ? elem.imgMobile : elem.imgDesktop}
+                  alt={elem.title}
+                  height={isMobileDevice ? "105" : "201"}
+                />
+                <h4>{elem.title}</h4>
+              </li>
+            )) ||
+            (isMobileDevice && (
+              <li className="fistPartElem" key={elem.id}>
+                <img
+                  // className="fistPartImg"
+                  src={isMobileDevice ? elem.imgMobile : elem.imgDesktop}
+                  alt={elem.title}
+                  height={isMobileDevice ? "105" : "201"}
+                />
+                <h4>{elem.title}</h4>
+              </li>
+            ))
+        )}
       </ul>
+      {!isMobileDevice && (
+        <ul className="secondPart">
+          {elemsDesktop.map((elem) => (
+            <li className="secondPartElem" key={elem.id}>
+              <img
+                className="secondPartImg"
+                src={elem.imgDesktop}
+                alt={elem.title}
+                height="201"
+              />
+              <h4>{elem.title}</h4>
+            </li>
+          ))}
+        </ul>
+      )}
       <div>
         <button>Расчет стоимости</button>
       </div>

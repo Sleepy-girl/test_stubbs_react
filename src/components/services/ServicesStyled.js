@@ -10,14 +10,16 @@ export const ServicesStyled = styled.section`
     font-size: 20px;
     line-height: 23px;
     color: ${colors.textTitle};
+    margin-bottom: 27px;
   }
-  h3:after {
+  h3::after {
     display: block;
     content: "";
     height: 2px;
     width: 60px;
     background-color: ${colors.decor};
-    margin: 5px auto 20px;
+    margin: 0 auto;
+    transform: translateY(5px);
   }
   ul {
     width: 328px;
@@ -28,9 +30,6 @@ export const ServicesStyled = styled.section`
     display: inline-block;
     height: 105px;
     width: 159px;
-  }
-  li:nth-child(odd) {
-    margin-right: 10px;
   }
   li:not(:nth-last-child(-n + 2)) {
     margin-bottom: 10px;
@@ -79,6 +78,44 @@ export const ServicesStyled = styled.section`
   button:focus {
     background: ${colors.substrate};
   }
+  @media (max-width: ${size.beforeDesktop}) {
+    li:nth-child(odd) {
+      margin-right: 10px;
+    }
+  }
   @media (min-width: ${size.desktop}) {
+    margin-bottom: 40px;
+    h3 {
+      font-size: 40px;
+      line-height: 60px;
+      margin-bottom: 42px;
+    }
+    h3:after {
+      width: 82px;
+      transform: translateY(10px);
+    }
+    ul {
+      width: 1360px;
+      margin-bottom: 0px;
+      /* margin-bottom: 20px; */
+    }
+    .secondPartElem,
+    .secondPartImg {
+      height: 202px;
+      width: 585px;
+    }
+    .secondPartElem:first-child {
+      margin-right: 10px;
+    }
+    li,
+    img {
+      height: 201px;
+      width: 386px;
+    }
+    li:not(:nth-last-child(-n + 2)) {
+      height: 201px;
+      width: 386px;
+      /* margin-bottom: 10px; */
+    }
   }
 `;
