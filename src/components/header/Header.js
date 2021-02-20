@@ -24,7 +24,7 @@ function Header() {
       <div className="container">
         <img className="logo" src={logo} alt="logo" height="56" />
         {isDesktopDevice && <Navigation />}
-        <div className="searchWrapper">
+        {/* <div className="searchWrapper">
           <input
             className={state.isShowSearch ? "inputAnimate" : ""}
             type="text"
@@ -40,8 +40,8 @@ function Header() {
               <use href={sprite + `#iconSearch`} />
             </svg>
           </div>
-        </div>
-        {isDesktopDevice && <Flags />}
+        </div> */}
+        {/* {isDesktopDevice && <Flags />} */}
 
         {isMobileDevice && (
           <ul

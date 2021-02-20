@@ -9,6 +9,7 @@ export const OurCompanyStyled = styled.section`
     font-size: 20px;
     line-height: 23px;
     color: ${colors.textTitle};
+    margin-bottom: 27px;
   }
   h3:after {
     display: block;
@@ -16,7 +17,8 @@ export const OurCompanyStyled = styled.section`
     height: 2px;
     width: 60px;
     background-color: ${colors.decor};
-    margin: 5px auto 20px;
+    margin: 0 auto;
+    transform: translateY(5px);
   }
   li {
     position: relative;
@@ -73,5 +75,14 @@ export const OurCompanyStyled = styled.section`
   }
 
   @media (min-width: ${size.desktop}) {
+    h3 {
+      font-size: 40px;
+      line-height: 60px;
+      margin-bottom: 32px;
+    }
+    h3:after {
+      width: 82px;
+      transform: translateY(0);
+    }
   }
 `;

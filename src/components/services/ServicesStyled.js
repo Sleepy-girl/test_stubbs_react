@@ -31,16 +31,13 @@ export const ServicesStyled = styled.section`
     height: 105px;
     width: 159px;
   }
-  li:not(:nth-last-child(-n + 2)) {
-    margin-bottom: 10px;
-  }
   img {
     height: 105px;
     width: 159px;
   }
   h4 {
     position: absolute;
-    bottom: 48px;
+    top: 20px;
     height: 36px;
     width: 150px;
     font-weight: 400;
@@ -64,13 +61,11 @@ export const ServicesStyled = styled.section`
   div {
     text-align: center;
   }
-
   button {
     width: 328px;
     height: 36px;
     font-size: 14px;
-    line-height: 36px;
-    font-weight: normal;
+    font-weight: 400;
     color: ${colors.textMain};
     background: ${colors.background};
   }
@@ -82,9 +77,13 @@ export const ServicesStyled = styled.section`
     li:nth-child(odd) {
       margin-right: 10px;
     }
+    li:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 10px;
+    }
   }
   @media (min-width: ${size.desktop}) {
     margin-bottom: 40px;
+
     h3 {
       font-size: 40px;
       line-height: 60px;
@@ -95,9 +94,20 @@ export const ServicesStyled = styled.section`
       transform: translateY(10px);
     }
     ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       width: 1360px;
       margin-bottom: 0px;
-      /* margin-bottom: 20px; */
+    }
+    .fistPartElem:not(:nth-child(3n)) {
+      margin-right: 11px;
+    }
+    .fistPartElem {
+      margin-bottom: 10px;
+    }
+    .secondPart {
+      margin-bottom: 20px;
     }
     .secondPartElem,
     .secondPartImg {
@@ -112,10 +122,22 @@ export const ServicesStyled = styled.section`
       height: 201px;
       width: 386px;
     }
-    li:not(:nth-last-child(-n + 2)) {
-      height: 201px;
-      width: 386px;
-      /* margin-bottom: 10px; */
+    h4 {
+      top: 30px;
+      height: 56px;
+      width: 339px;
+      font-size: 20px;
+      line-height: 56px;
+      padding: 0 0 0 15px;
+    }
+    h4::after {
+      right: 15px;
+      height: 46px;
+    }
+    button {
+      width: 379px;
+      height: 43px;
+      font-size: 20px;
     }
   }
 `;

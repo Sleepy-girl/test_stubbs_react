@@ -12,31 +12,21 @@ function Services() {
       <ul className="fistPart">
         {elems.map(
           (elem) =>
-            (isDesktopDevice && elem.imgDesktop !== "#" && (
+            (isMobileDevice && (
               <li className="fistPartElem" key={elem.id}>
-                <img
-                  // className="fistPartImg"
-                  src={isMobileDevice ? elem.imgMobile : elem.imgDesktop}
-                  alt={elem.title}
-                  height={isMobileDevice ? "105" : "201"}
-                />
+                <img src={elem.imgMobile} alt={elem.title} height="105" />
                 <h4>{elem.title}</h4>
               </li>
             )) ||
-            (isMobileDevice && (
+            (isDesktopDevice && elem.imgDesktop !== "#" && (
               <li className="fistPartElem" key={elem.id}>
-                <img
-                  // className="fistPartImg"
-                  src={isMobileDevice ? elem.imgMobile : elem.imgDesktop}
-                  alt={elem.title}
-                  height={isMobileDevice ? "105" : "201"}
-                />
+                <img src={elem.imgDesktop} alt={elem.title} height="201" />
                 <h4>{elem.title}</h4>
               </li>
             ))
         )}
       </ul>
-      {!isMobileDevice && (
+      {isDesktopDevice && (
         <ul className="secondPart">
           {elemsDesktop.map((elem) => (
             <li className="secondPartElem" key={elem.id}>
@@ -52,7 +42,11 @@ function Services() {
         </ul>
       )}
       <div>
-        <button>Расчет стоимости</button>
+        <button>
+          {isMobileDevice
+            ? "Расчет стоимости"
+            : "Быстрый расчет цены по чертежу"}
+        </button>
       </div>
     </ServicesStyled>
   );

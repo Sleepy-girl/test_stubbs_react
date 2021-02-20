@@ -50,7 +50,6 @@ function Navigation() {
         </ul>
       </div>
       {/* </div> */}
-      {/* {isDesktopDevice && null} */}
     </NavigationStyled>
   );
 }
