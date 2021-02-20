@@ -38,7 +38,6 @@ export const OurCompanyStyled = styled.section`
     line-height: 23px;
     color: ${colors.textMain};
     background-color: ${colors.substrate};
-    /* padding: 15px 20 15px 16px; */
   }
   .whyWe {
     padding-left: 16px;
@@ -83,6 +82,41 @@ export const OurCompanyStyled = styled.section`
     h3:after {
       width: 82px;
       transform: translateY(0);
+    }
+    li {
+      width: 1360px;
+    }
+    li:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    h4 {
+      bottom: 60px;
+      height: 260px;
+      width: 750px;
+      font-size: 40px;
+      line-height: 60px;
+      padding-top: 20px;
+    }
+    .whyWe {
+      padding-left: 90px;
+    }
+    .advantages {
+      padding-left: 115px;
+    }
+    h4::after {
+      height: 212px;
+    }
+    .whyWe::after {
+      right: 61px;
+    }
+    .advantages::after {
+      left: 78px;
+    }
+    p {
+      width: 545px;
+      font-size: 18px;
+      line-height: 23px;
+      padding-top: 25px;
     }
   }
 `;

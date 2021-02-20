@@ -6,10 +6,10 @@ export const FooterStyled = styled.footer`
   .wrapperList {
     position: relative;
     display: flex;
-    width: 328px;
     justify-content: space-between;
-    margin: 0 auto 30px;
+    width: 328px;
     padding-top: 20px;
+    margin: 0 auto 30px;
   }
   h4 {
     font-size: 16px;
@@ -18,7 +18,6 @@ export const FooterStyled = styled.footer`
     color: ${colors.textTitle};
   }
   .title {
-    margin-bottom: 20px;
     margin-bottom: 20px;
   }
   .columnList::before,
@@ -77,14 +76,19 @@ export const FooterStyled = styled.footer`
   }
   .iconList {
     display: flex;
-    width: 94px;
     justify-content: space-between;
+    width: 94px;
     margin-bottom: 10px;
   }
   svg {
-    width: 21px;
     height: 21px;
+    width: 21px;
     fill: ${colors.textTitle};
+  }
+  .developedWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .by {
     font-family: "Roboto";
@@ -102,5 +106,11 @@ export const FooterStyled = styled.footer`
   }
 
   @media (min-width: ${size.desktop}) {
+    .container {
+      display: flex;
+    }
+    .servicesListWrapper {
+      /* display: flex; */
+    }
   }
 `;

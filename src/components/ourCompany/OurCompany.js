@@ -1,15 +1,21 @@
 import React from "react";
-import img1 from "../../assets/images/ourCompany/img1.jpg";
-import img2 from "../../assets/images/ourCompany/img2.jpg";
+import useDeviceSizes from "../../hooks/useDeviceSizes";
+import { images } from "./dataImg";
 import { OurCompanyStyled } from "./OurCompanyStyled";
 
 function OurCompany() {
+  const { isMobileDevice } = useDeviceSizes();
+
   return (
     <OurCompanyStyled>
       <h3>Наша компания</h3>
       <ul>
         <li>
-          <img src={img1} alt="фоновая картинка" height="236" />
+          <img
+            src={isMobileDevice ? images.mobile1 : images.desktop1}
+            alt="тематический фон"
+            height="360"
+          />
           <h4 className="whyWe">
             Почему мы?
             <p>
@@ -21,7 +27,11 @@ function OurCompany() {
           </h4>
         </li>
         <li>
-          <img src={img2} alt="фоновая картинка" height="236" />
+          <img
+            src={isMobileDevice ? images.mobile2 : images.desktop2}
+            alt="тематический фон"
+            height="360"
+          />
           <h4 className="advantages">
             Наши преимущества
             <p>
