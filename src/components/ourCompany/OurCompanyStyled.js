@@ -7,37 +7,36 @@ export const OurCompanyStyled = styled.section`
   h3 {
     text-align: center;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
     color: ${colors.textTitle};
     margin-bottom: 27px;
   }
-  h3:after {
-    display: block;
-    content: "";
+  h3::after {
     height: 2px;
     width: 60px;
-    background-color: ${colors.decor};
     margin: 0 auto;
     transform: translateY(5px);
+  }
+  li,
+  h3::after {
+    margin: 0 auto;
   }
   li {
     position: relative;
     width: 360px;
-    margin: 0 auto;
   }
   li:not(:last-child) {
     margin-bottom: 20px;
   }
+  h3,
   h4 {
-    position: absolute;
+    font-size: 20px;
+    line-height: 23px;
+  }
+  h4 {
     bottom: 28px;
     height: 180px;
     width: 326px;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    color: ${colors.textMain};
     background-color: ${colors.substrate};
   }
   .whyWe {
@@ -47,14 +46,20 @@ export const OurCompanyStyled = styled.section`
     padding-left: 65px;
     right: 0;
   }
+  h3::after,
   h4::after {
     display: block;
     content: "";
+    background-color: ${colors.decor};
+  }
+  h4,
+  h4::after {
     position: absolute;
+  }
+  h4::after {
     top: 0;
     height: 100px;
     width: 2px;
-    background-color: ${colors.decor};
     z-index: 5;
   }
   .whyWe::after {
@@ -63,11 +68,14 @@ export const OurCompanyStyled = styled.section`
   .advantages::after {
     left: 20px;
   }
+  h4,
+  p {
+    color: ${colors.textMain};
+  }
   p {
     width: 260px;
     font-size: 12px;
     line-height: 16px;
-    color: ${colors.textMain};
   }
   h4,
   p {
@@ -76,8 +84,6 @@ export const OurCompanyStyled = styled.section`
 
   @media (min-width: ${size.desktop}) {
     h3 {
-      font-size: 40px;
-      line-height: 60px;
       margin-bottom: 32px;
     }
     h3:after {
@@ -90,12 +96,15 @@ export const OurCompanyStyled = styled.section`
     li:not(:last-child) {
       margin-bottom: 30px;
     }
+    h3,
+    h4 {
+      font-size: 40px;
+      line-height: 60px;
+    }
     h4 {
       bottom: 60px;
       height: 260px;
       width: 750px;
-      font-size: 40px;
-      line-height: 60px;
       padding-top: 20px;
     }
     .whyWe {
