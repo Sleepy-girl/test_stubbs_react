@@ -45,7 +45,7 @@ function Footer() {
               <div className="servicesListWrapper">
                 <ul>
                   {servicesListDesktop1.map((elem) => (
-                    <li className="columnElem" key={elem.id}>
+                    <li className="columnElem columnElemFist" key={elem.id}>
                       <a className="columnLink" href="#">
                         {elem.text}
                       </a>
@@ -65,6 +65,8 @@ function Footer() {
             )}
           </li>
         </ul>
+
+        {/* //!CONYACTS */}
         <div className="contacts">
           <h4 className="contactsTitle">Контактная информация</h4>
           <span className="address">Заводская улица, 2 В,</span>
