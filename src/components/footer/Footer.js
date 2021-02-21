@@ -69,8 +69,15 @@ function Footer() {
         {/* //!CONYACTS */}
         <div className="contacts">
           <h4 className="contactsTitle">Контактная информация</h4>
-          <span className="address">Заводская улица, 2 В,</span>
-          <span className="address">Буча,</span>
+          {isMobileDevice ? (
+            <>
+              <span className="address">Заводская улица, 2 В,</span>
+              <span className="address">Буча,</span>
+            </>
+          ) : (
+            <span className="address">Заводская улица, 2 В, Буча,</span>
+          )}
+
           <span className="address postIndex">Киевская область, 08292</span>
           <div className="schedule">
             <span className="workDays">ПН - ПТ:</span>

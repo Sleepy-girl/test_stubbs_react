@@ -3,6 +3,7 @@ import { colors } from "../../stylesheet/vars";
 import { size } from "../../common/deviceSizes";
 
 export const OurCompanyStyled = styled.section`
+  margin-bottom: 20px;
   h3 {
     text-align: center;
     font-weight: 500;
