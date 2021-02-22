@@ -30,6 +30,21 @@ export const ServicesStyled = styled.section`
     display: inline-block;
     height: 105px;
     width: 159px;
+    cursor: pointer;
+  }
+  .fistPartElem::after,
+  .secondPartElem::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .fistPartElem:hover::after,
+  .secondPartElem:hover::after {
+    background-color: rgba(255, 255, 255, 0.2);
   }
   img {
     height: 105px;
@@ -46,6 +61,7 @@ export const ServicesStyled = styled.section`
     color: ${colors.textMain};
     background-color: ${colors.substrate};
     padding: 4px 16px 4px 6px;
+    z-index: 5;
   }
   h4::after {
     display: block;
@@ -111,7 +127,7 @@ export const ServicesStyled = styled.section`
     }
     .secondPartElem,
     .secondPartImg {
-      height: 202px;
+      height: 201px;
       width: 585px;
     }
     .secondPartElem:first-child {

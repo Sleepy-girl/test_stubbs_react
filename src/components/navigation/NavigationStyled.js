@@ -56,12 +56,10 @@ export const NavigationStyled = styled.nav`
   }
 
   @media (min-width: ${size.desktop}) {
-    /* position: static; */
     .menuList {
       display: flex;
     }
     .menuElem:not(:last-child) {
-      /* position: relative; */
       margin-right: 60px;
     }
     .menuElem:first-child {
@@ -71,14 +69,11 @@ export const NavigationStyled = styled.nav`
       transform: translateY(-30px);
     }
     .menuElem:not(:first-child)::before {
-      /* position: absolute; */
       display: block;
       content: "";
       width: 1px;
       height: 95px;
-      /* top: 0; */
       background-color: ${colors.search};
-      /* margin-right: 30px; */
       transform: translate(-30px, 30px);
     }
 

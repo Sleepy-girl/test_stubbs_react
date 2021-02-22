@@ -34,10 +34,15 @@ export const FooterStyled = styled.footer`
     right: -5px;
   }
   h4,
+  span,
+  .columnElem:hover > .columnLink,
+  .columnElem:focus > .columnLink {
+    color: ${colors.textTitle};
+  }
+  h4,
   span {
     font-size: 16px;
     line-height: 19px;
-    color: ${colors.textTitle};
   }
   .title,
   .postIndex,
@@ -59,10 +64,15 @@ export const FooterStyled = styled.footer`
     width: 94px;
     margin-bottom: 10px;
   }
+
   svg {
     height: 21px;
     width: 21px;
     fill: ${colors.textTitle};
+  }
+  svg:hover,
+  svg:focus {
+    fill: ${colors.decor};
   }
   .wrapperList,
   .contacts,
