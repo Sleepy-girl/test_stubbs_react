@@ -97,11 +97,11 @@ export const HeaderStyled = styled.header`
     .searchWrapper {
       position: absolute;
       top: 56px;
-      right: 194px;
+      left: 892px;
       z-index: 1;
     }
     .positionChange {
-      top: 105px;
+      top: 106px;
     }
     .inputShow {
       transform: translateY(0px);
