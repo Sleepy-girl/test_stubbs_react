@@ -76,7 +76,9 @@ export const NavigationStyled = styled.nav`
       background-color: ${colors.search};
       transform: translate(-30px, 30px);
     }
-
+    .menuElem:nth-child(2) {
+      padding-right: 26px;
+    }
     .menuLink {
       color: ${colors.textTitle};
     }
@@ -90,6 +92,13 @@ export const NavigationStyled = styled.nav`
     .menuElem:hover > .menuLink::after,
     .menuElem:focus > .menuLink::after {
       background-color: ${colors.decor};
+    }
+    .iconArrowDown {
+      width: 14px;
+      height: 8px;
+      fill: ${colors.decor};
+      transform: translate(70px, -30px);
+      cursor: pointer;
     }
   }
 `;

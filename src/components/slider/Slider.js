@@ -46,6 +46,7 @@ function SliderComponent() {
     activeIndex === slideImg.length - 1 ? 0 : activeIndex + 1;
 
   const handleClick = (e) => {
+    e.preventDefault();
     const { id } = e.target;
     setActiveIndex(id - 1);
   };
@@ -77,10 +78,34 @@ function SliderComponent() {
         </h2>
       </ul>
       <ul className="dotsList">
-        <li className="dots firstDot" id="1" onClick={handleClick}></li>
-        <li className="dots secondDot" id="2" onClick={handleClick}></li>
-        <li className="dots thirdDot" id="3" onClick={handleClick}></li>
-        <li className="dots fourthDot" id="4" onClick={handleClick}></li>
+        <li
+          className={`dots firstDot ${
+            activeIndex === 0 ? "firstDotActive" : ""
+          }`}
+          id="1"
+          onClick={handleClick}
+        ></li>
+        <li
+          className={`dots secondDot ${
+            activeIndex === 1 ? "secondDotActive" : ""
+          }`}
+          id="2"
+          onClick={handleClick}
+        ></li>
+        <li
+          className={`dots thirdDot ${
+            activeIndex === 2 ? "thirdDotActive" : ""
+          }`}
+          id="3"
+          onClick={handleClick}
+        ></li>
+        <li
+          className={`dots fourthDot ${
+            activeIndex === 3 ? "fourthDotActive" : ""
+          }`}
+          id="4"
+          onClick={handleClick}
+        ></li>
       </ul>
     </SliderStyled>
   );

@@ -64,13 +64,14 @@ export const SliderStyled = styled.section`
     background-color: ${colors.textMain};
     cursor: pointer;
   }
-  .dots:hover,
-  .dots:focus,
-  .dots:active {
-    background-color: ${colors.decor};
-  }
   .dots:not(:last-child) {
     margin-right: 10px;
+  }
+  .firstDotActive,
+  .secondDotActive,
+  .thirdDotActive,
+  .fourthDotActive {
+    background-color: ${colors.decor};
   }
 
   @media (min-width: ${size.desktop}) {

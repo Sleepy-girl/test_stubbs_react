@@ -1,7 +1,8 @@
 import React from "react";
 import useDeviceSizes from "../../hooks/useDeviceSizes";
-import { NavigationStyled } from "./NavigationStyled";
 import Flags from "./Flags";
+import sprite from "../../assets/images/icons-sprite.svg";
+import { NavigationStyled } from "./NavigationStyled";
 
 const menuMobile = [
   { text: "Услуги", linkOnComp: "#" },
@@ -18,7 +19,7 @@ const menuDesktop = [
 ];
 
 function Navigation() {
-  const { isMobileDevice, isDesktopDevice } = useDeviceSizes();
+  const { isMobileDevice } = useDeviceSizes();
 
   return (
     <NavigationStyled>
@@ -45,6 +46,11 @@ function Navigation() {
                   <a className="menuLink" href={elem.linkOnComp}>
                     {elem.text}
                   </a>
+                  {elem.text === "Услуги" && (
+                    <svg className="iconArrowDown">
+                      <use href={sprite + "#iconArrowDown"} />
+                    </svg>
+                  )}
                 </li>
               ))}
         </ul>

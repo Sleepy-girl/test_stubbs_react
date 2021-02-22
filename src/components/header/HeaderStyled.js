@@ -9,12 +9,10 @@ export const HeaderStyled = styled.header`
     height: 60px;
     margin: 0 auto;
   }
-
   img {
     width: 80px;
     height: 56px;
   }
-
   .searchWrapper {
     position: relative;
   }
@@ -96,12 +94,25 @@ export const HeaderStyled = styled.header`
       height: 90px;
       margin: 5px 148px 0 0;
     }
+    .searchWrapper {
+      position: absolute;
+      top: 56px;
+      right: 194px;
+      z-index: 1;
+    }
+    .positionChange {
+      top: 105px;
+    }
+    .inputShow {
+      transform: translateY(0px);
+    }
     input {
       font-size: 16px;
       line-height: 40px;
       border: none;
       background-color: ${colors.inputBackground};
       padding-left: 31px;
+      transform: translateY(-100px);
     }
     .searchWrapper,
     input {

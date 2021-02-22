@@ -23,10 +23,24 @@ function Header() {
     <HeaderStyled>
       <div className="container">
         <img className="logo" src={logo} alt="logo" height="56" />
+
         {isDesktopDevice && <Navigation />}
-        {/* <div className="searchWrapper">
+
+        <div
+          className={`searchWrapper ${
+            isDesktopDevice && (state.isShowSearch ? "positionChange" : "")
+          }`}
+        >
           <input
-            className={state.isShowSearch ? "inputAnimate" : ""}
+            className={`${
+              isMobileDevice
+                ? state.isShowSearch
+                  ? "inputAnimate"
+                  : ""
+                : state.isShowSearch
+                ? "inputShow"
+                : ""
+            }`}
             type="text"
             name="search"
             placeholder="Поиск"
@@ -40,8 +54,9 @@ function Header() {
               <use href={sprite + `#iconSearch`} />
             </svg>
           </div>
-        </div> */}
-        {/* {isDesktopDevice && <Flags />} */}
+        </div>
+
+        {isDesktopDevice && <Flags />}
 
         {isMobileDevice && (
           <ul
