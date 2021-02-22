@@ -4,7 +4,10 @@ import slideMobile1 from "../../assets/images/slider/mobile/Rectangle.jpg";
 import slideMobile2 from "../../assets/images/slider/mobile/slide2.jpg";
 import slideMobile3 from "../../assets/images/slider/mobile/slide3.jpg";
 import slideMobile4 from "../../assets/images/slider/mobile/slide4.jpg";
-import slideDesktop1 from "../../assets/images/slider/slide1-desktop.jpg";
+import slideDesktop1 from "../../assets/images/slider/forDesktop/slide1.jpg";
+import slideDesktop2 from "../../assets/images/slider/forDesktop/slide2.jpg";
+import slideDesktop3 from "../../assets/images/slider/forDesktop/slide3.jpg";
+import slideDesktop4 from "../../assets/images/slider/forDesktop/slide4.jpg";
 import { SliderStyled } from "./SliderStyled";
 
 function SliderComponent() {
@@ -20,19 +23,19 @@ function SliderComponent() {
     />,
     <img
       key={slideMobile2}
-      src={isMobileDevice ? slideMobile2 : slideDesktop1}
+      src={isMobileDevice ? slideMobile2 : slideDesktop2}
       alt="firstSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
     <img
       key={slideMobile3}
-      src={isMobileDevice ? slideMobile3 : slideDesktop1}
+      src={isMobileDevice ? slideMobile3 : slideDesktop3}
       alt="firstSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
     <img
       key={slideMobile4}
-      src={isMobileDevice ? slideMobile4 : slideDesktop1}
+      src={isMobileDevice ? slideMobile4 : slideDesktop4}
       alt="firstSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
@@ -84,28 +87,3 @@ function SliderComponent() {
 }
 
 export default SliderComponent;
-// { id: "slide-1", srcMobile: slideMobile1, srcDesktop: slideDesktop1 },
-// { id: "slide-2", srcMobile: slideMobile1, srcDesktop: slideDesktop1 },
-// { id: "slide-3", srcMobile: slideMobile1, srcDesktop: slideDesktop1 },
-// { id: "slide-4", srcMobile: slideMobile1, srcDesktop: slideDesktop1 },
-/* <ul className="slider">
-          {slideImg.map((slide) => (
-            <li key={slide.id} className="sliderElem">
-              <img
-                src={isMobileDevice ? slide.srcMobile : slide.srcDesktop}
-                alt="slide1"
-                height={isMobileDevice ? "216" : "448"}
-              />
-              <h2>
-                Высокоточное изготовление
-                <span>изделий из металла по чертежам</span>
-              </h2>
-            </li>
-          ))}
-        </ul> */
-/* <ul className="dotsList">
-        <li className="dots"></li>
-        <li className="dots"></li>
-        <li className="dots"></li>
-        <li className="dots"></li>
-      </ul> */
