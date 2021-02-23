@@ -1,6 +1,9 @@
 import React from "react";
 import useDeviceSizes from "../../hooks/useDeviceSizes";
 import { elems, elemsDesktop } from "./dataServices";
+// import smallDear from "../../assets/images/services/dears/smallDear.svg";
+// import largeDear from "../../assets/images/services/dears/largeDear.svg";
+import sprite from "../../assets/images/icons-sprite.svg";
 import { ServicesStyled } from "./ServicesStyled";
 
 function Services() {
@@ -8,6 +11,22 @@ function Services() {
 
   return (
     <ServicesStyled>
+      {isDesktopDevice && (
+        <>
+          <svg className="topLeftDear">
+            <use href={sprite + "#dear"} />
+          </svg>
+          <svg className="bottomLeftDear">
+            <use href={sprite + "#dear"} />
+          </svg>
+          <svg className="topRightDear">
+            <use href={sprite + "#dear"} />
+          </svg>
+          <svg className="bottomRightDear">
+            <use href={sprite + "#dear"} />
+          </svg>
+        </>
+      )}
       <h3>Услуги</h3>
       <ul className="fistPart">
         {elems.map(

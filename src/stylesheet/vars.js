@@ -11,4 +11,6 @@ export const colors = {
 
   inputBackground: "rgb(241, 241, 241)",
   flagsBackground: "rgba(62, 62, 62, 0.5)",
+
+  dears: "rgba(196, 196, 196, 0.33)",
 };

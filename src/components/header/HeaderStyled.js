@@ -85,6 +85,7 @@ export const HeaderStyled = styled.header`
 
   @media (min-width: ${size.desktop}) {
     .container {
+      position: relative;
       width: 1180px;
       height: 106px;
       padding-bottom: 11px;
@@ -97,7 +98,7 @@ export const HeaderStyled = styled.header`
     .searchWrapper {
       position: absolute;
       top: 56px;
-      left: 892px;
+      left: 802px;
       z-index: 1;
     }
     .positionChange {

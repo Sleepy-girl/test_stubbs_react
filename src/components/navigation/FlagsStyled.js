@@ -24,7 +24,7 @@ export const FlagsStyled = styled.div`
     ul {
       position: absolute;
       top: 64px;
-      left: 1212px;
+      left: 1128px;
       width: 51px;
       flex-wrap: wrap;
       z-index: 2;
@@ -45,15 +45,17 @@ export const FlagsStyled = styled.div`
     li:not(:first-child) {
       margin-bottom: 15px;
     }
+    svg {
+      cursor: pointer;
+    }
     .iconArrowDown {
       position: absolute;
       top: 64px;
-      left: 1256px;
+      left: 1170px;
       width: 26px;
       height: 20px;
       padding: 6px;
       fill: ${colors.decor};
-      cursor: pointer;
     }
     .arrowChange {
       transform: rotate(180deg);

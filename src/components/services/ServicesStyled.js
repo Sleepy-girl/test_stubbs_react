@@ -98,8 +98,43 @@ export const ServicesStyled = styled.section`
     }
   }
   @media (min-width: ${size.desktop}) {
+    position: relative;
     margin-bottom: 40px;
 
+    svg {
+      position: absolute;
+      fill: ${colors.dears};
+    }
+    .topLeftDear {
+      left: 12px;
+      top: 200px;
+      transform: rotate(-15deg);
+    }
+    .bottomLeftDear {
+      left: 22px;
+      top: 434px;
+      transform: rotate(-15deg);
+    }
+    .topRightDear {
+      right: 10px;
+      top: 184px;
+      transform: rotate(45deg);
+    }
+    .bottomRightDear {
+      right: 46px;
+      top: 386px;
+      transform: rotate(45deg);
+    }
+    .topLeftDear,
+    .bottomRightDear {
+      width: 208px;
+      height: 208px;
+    }
+    .bottomLeftDear,
+    .topRightDear {
+      width: 176px;
+      height: 176px;
+    }
     h3 {
       font-size: 40px;
       line-height: 60px;
