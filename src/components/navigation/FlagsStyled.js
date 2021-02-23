@@ -21,8 +21,13 @@ export const FlagsStyled = styled.div`
   }
 
   @media (min-width: ${size.desktop}) {
-    ul {
+    ul,
+    .substrate::after,
+    .iconArrowDown {
       position: absolute;
+    }
+    ul {
+      /* position: absolute; */
       top: 64px;
       left: 1128px;
       width: 51px;
@@ -33,7 +38,7 @@ export const FlagsStyled = styled.div`
       margin-bottom: 30px;
     }
     .substrate::after {
-      position: absolute;
+      /* position: absolute; */
       display: block;
       content: "";
       bottom: -1px;
@@ -49,7 +54,7 @@ export const FlagsStyled = styled.div`
       cursor: pointer;
     }
     .iconArrowDown {
-      position: absolute;
+      /* position: absolute; */
       top: 64px;
       left: 1170px;
       width: 26px;

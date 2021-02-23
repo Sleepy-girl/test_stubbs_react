@@ -12,7 +12,7 @@ const initialState = {
 
 function Flags() {
   const [flag, setFlags] = useState(initialState);
-  const { isDesktopDevice } = useDeviceSizes();
+  const { isMobileDevice, isDesktopDevice } = useDeviceSizes();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -32,84 +32,113 @@ function Flags() {
 
   return (
     <FlagsStyled className="flagList">
-      {isDesktopDevice && (
+      {isMobileDevice && (
         <ul>
-          <li
-            className={`flagElem ${flag.isShow && "substrate"}`}
-            onClick={handleClick}
-          >
-            <svg className="flagIcons">
+          <li className="flagElem" onClick={handleClick}>
+            <svg className={`flagIcons ${!flag.iconFlagOfRussia && "apacity"}`}>
+              <use id="iconFlagOfRussia" href={sprite + "#iconFlagOfRussia"} />
+            </svg>
+          </li>
+          <li className="flagElem" onClick={handleClick}>
+            <svg
+              className={`flagIcons ${!flag.iconFlagOfUkraine && "apacity"}`}
+            >
               <use
-                id={`${
-                  (flag.iconFlagOfRussia && "iconFlagOfRussia") ||
-                  (flag.iconFlagOfUkraine && "iconFlagOfUkraine") ||
-                  (flag.iconUnitedKingdom && "iconUnitedKingdom")
-                }`}
-                href={
-                  sprite +
-                  `${
-                    (flag.iconFlagOfRussia && "#iconFlagOfRussia") ||
-                    (flag.iconFlagOfUkraine && "#iconFlagOfUkraine") ||
-                    (flag.iconUnitedKingdom && "#iconUnitedKingdom")
-                  }
-                  `
-                }
+                id="iconFlagOfUkraine"
+                href={sprite + "#iconFlagOfUkraine"}
               />
             </svg>
           </li>
-          {flag.isShow && (
-            <>
-              <li className="flagElem" onClick={handleClick}>
-                <svg className="flagIcons">
-                  <use
-                    id={`${
-                      (flag.iconFlagOfRussia && "iconFlagOfUkraine") ||
-                      (flag.iconFlagOfUkraine && "iconFlagOfRussia") ||
-                      (flag.iconUnitedKingdom && "iconFlagOfUkraine")
-                    }`}
-                    href={
-                      sprite +
-                      `${
-                        (flag.iconFlagOfRussia && "#iconFlagOfUkraine") ||
-                        (flag.iconFlagOfUkraine && "#iconFlagOfRussia") ||
-                        (flag.iconUnitedKingdom && "#iconFlagOfUkraine")
-                      }`
-                    }
-                  />
-                </svg>
-              </li>
-              <li className="flagElem" onClick={handleClick}>
-                <svg className="flagIcons">
-                  <use
-                    id={`${
-                      (flag.iconFlagOfRussia && "iconUnitedKingdom") ||
-                      (flag.iconFlagOfUkraine && "iconUnitedKingdom") ||
-                      (flag.iconUnitedKingdom && "iconFlagOfRussia")
-                    }`}
-                    href={
-                      sprite +
-                      `${
-                        (flag.iconFlagOfRussia && "#iconUnitedKingdom") ||
-                        (flag.iconFlagOfUkraine && "#iconUnitedKingdom") ||
-                        (flag.iconUnitedKingdom && "#iconFlagOfRussia")
-                      }`
-                    }
-                  />
-                </svg>
-              </li>
-            </>
-          )}
+          <li className="flagElem" onClick={handleClick}>
+            <svg
+              className={`flagIcons ${!flag.iconUnitedKingdom && "apacity"}`}
+            >
+              <use
+                id="iconUnitedKingdom"
+                href={sprite + "#iconUnitedKingdom"}
+              />
+            </svg>
+          </li>
         </ul>
       )}
 
       {isDesktopDevice && (
-        <svg
-          className={`iconArrowDown ${flag.isShow ? "arrowChange" : ""}`}
-          id="iconArrowDown"
-          onClick={handleClick}
-        >
-          <use href={sprite + "#iconArrowDown"} />
-        </svg>
+        <>
+          <ul>
+            <li
+              className={`flagElem ${flag.isShow && "substrate"}`}
+              onClick={handleClick}
+            >
+              <svg className="flagIcons">
+                <use
+                  id={`${
+                    (flag.iconFlagOfRussia && "iconFlagOfRussia") ||
+                    (flag.iconFlagOfUkraine && "iconFlagOfUkraine") ||
+                    (flag.iconUnitedKingdom && "iconUnitedKingdom")
+                  }`}
+                  href={
+                    sprite +
+                    `${
+                      (flag.iconFlagOfRussia && "#iconFlagOfRussia") ||
+                      (flag.iconFlagOfUkraine && "#iconFlagOfUkraine") ||
+                      (flag.iconUnitedKingdom && "#iconUnitedKingdom")
+                    }
+                  `
+                  }
+                />
+              </svg>
+            </li>
+            {flag.isShow && (
+              <>
+                <li className="flagElem" onClick={handleClick}>
+                  <svg className="flagIcons">
+                    <use
+                      id={`${
+                        (flag.iconFlagOfRussia && "iconFlagOfUkraine") ||
+                        (flag.iconFlagOfUkraine && "iconFlagOfRussia") ||
+                        (flag.iconUnitedKingdom && "iconFlagOfUkraine")
+                      }`}
+                      href={
+                        sprite +
+                        `${
+                          (flag.iconFlagOfRussia && "#iconFlagOfUkraine") ||
+                          (flag.iconFlagOfUkraine && "#iconFlagOfRussia") ||
+                          (flag.iconUnitedKingdom && "#iconFlagOfUkraine")
+                        }`
+                      }
+                    />
+                  </svg>
+                </li>
+                <li className="flagElem" onClick={handleClick}>
+                  <svg className="flagIcons">
+                    <use
+                      id={`${
+                        (flag.iconFlagOfRussia && "iconUnitedKingdom") ||
+                        (flag.iconFlagOfUkraine && "iconUnitedKingdom") ||
+                        (flag.iconUnitedKingdom && "iconFlagOfRussia")
+                      }`}
+                      href={
+                        sprite +
+                        `${
+                          (flag.iconFlagOfRussia && "#iconUnitedKingdom") ||
+                          (flag.iconFlagOfUkraine && "#iconUnitedKingdom") ||
+                          (flag.iconUnitedKingdom && "#iconFlagOfRussia")
+                        }`
+                      }
+                    />
+                  </svg>
+                </li>
+              </>
+            )}
+          </ul>
+          <svg
+            className={`iconArrowDown ${flag.isShow ? "arrowChange" : ""}`}
+            id="iconArrowDown"
+            onClick={handleClick}
+          >
+            <use href={sprite + "#iconArrowDown"} />
+          </svg>
+        </>
       )}
     </FlagsStyled>
   );

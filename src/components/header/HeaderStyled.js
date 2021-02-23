@@ -16,6 +16,7 @@ export const HeaderStyled = styled.header`
   .searchWrapper {
     position: relative;
   }
+
   input {
     font-size: 14px;
     font-weight: 400;
