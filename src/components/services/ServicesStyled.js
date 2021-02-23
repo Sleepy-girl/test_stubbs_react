@@ -4,40 +4,65 @@ import { size } from "../../common/deviceSizes";
 
 export const ServicesStyled = styled.section`
   margin-bottom: 30px;
-  h3 {
+  h3,
+  div {
     text-align: center;
+  }
+  h3 {
     font-weight: 500;
     font-size: 20px;
     line-height: 23px;
     color: ${colors.textTitle};
     margin-bottom: 27px;
   }
-  h3::after {
+  h3::after,
+  h4::after,
+  .fistPartElem::after,
+  .secondPartElem::after {
     display: block;
     content: "";
+  }
+  h3::after,
+  h4::after {
+    background-color: ${colors.decor};
+  }
+  h3::after {
     height: 2px;
     width: 60px;
-    background-color: ${colors.decor};
     margin: 0 auto;
     transform: translateY(5px);
   }
-  ul {
+  ul,
+  button {
     width: 328px;
+  }
+  ul {
     margin: 0 auto 15px;
+  }
+  li,
+  img {
+    height: 105px;
+    width: 159px;
   }
   li {
     position: relative;
     display: inline-block;
-    height: 105px;
     width: 159px;
     cursor: pointer;
   }
+  h4,
+  h4::after,
   .fistPartElem::after,
   .secondPartElem::after {
     position: absolute;
-    content: "";
-    display: block;
+  }
+  h4::after,
+  .fistPartElem::after,
+  .secondPartElem::after {
     top: 0;
+  }
+  .fistPartElem::after,
+  .secondPartElem::after {
     left: 0;
     height: 100%;
     width: 100%;
@@ -46,43 +71,31 @@ export const ServicesStyled = styled.section`
   .secondPartElem:hover::after {
     background-color: rgba(255, 255, 255, 0.2);
   }
-  img {
-    height: 105px;
-    width: 159px;
-  }
-  h4 {
-    position: absolute;
-    top: 20px;
+  h4,
+  button {
     height: 36px;
-    width: 150px;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
     color: ${colors.textMain};
-    background-color: ${colors.substrate};
-    padding: 4px 16px 4px 6px;
+  }
+  h4,
+  h4::after {
     z-index: 5;
   }
+  h4 {
+    top: 20px;
+    width: 150px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: ${colors.substrate};
+    padding: 4px 16px 4px 6px;
+  }
   h4::after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
     right: 10px;
     height: 23px;
     width: 2px;
-    background-color: ${colors.decor};
-    z-index: 5;
-  }
-  div {
-    text-align: center;
   }
   button {
-    width: 328px;
-    height: 36px;
     font-size: 14px;
-    font-weight: 400;
-    color: ${colors.textMain};
     background: ${colors.background};
   }
   button:hover,
@@ -163,9 +176,14 @@ export const ServicesStyled = styled.section`
     .secondPart {
       margin-bottom: 20px;
     }
+    li,
+    img,
     .secondPartElem,
     .secondPartImg {
       height: 201px;
+    }
+    .secondPartElem,
+    .secondPartImg {
       width: 585px;
     }
     .secondPartElem:first-child {
@@ -173,14 +191,16 @@ export const ServicesStyled = styled.section`
     }
     li,
     img {
-      height: 201px;
       width: 386px;
+    }
+    h4,
+    button {
+      font-size: 20px;
     }
     h4 {
       top: 30px;
       height: 56px;
       width: 339px;
-      font-size: 20px;
       line-height: 56px;
       padding: 0 0 0 15px;
     }
@@ -191,7 +211,6 @@ export const ServicesStyled = styled.section`
     button {
       width: 379px;
       height: 43px;
-      font-size: 20px;
     }
   }
 `;

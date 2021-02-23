@@ -16,7 +16,11 @@ export const HeaderStyled = styled.header`
   .searchWrapper {
     position: relative;
   }
-
+  input,
+  input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+  }
   input {
     font-size: 14px;
     font-weight: 400;
@@ -31,8 +35,6 @@ export const HeaderStyled = styled.header`
     height: 30px;
   }
   input::placeholder {
-    font-weight: 400;
-    font-size: 14px;
     color: ${colors.placeholder};
   }
   svg {
@@ -76,11 +78,9 @@ export const HeaderStyled = styled.header`
     }
     .firstElemOfCross {
       transform: rotate(45deg);
-      transition: transform 50ms linear;
     }
     .thirdElemOfCross {
       transform: translateY(-2.6px) rotate(-45deg);
-      transition: transform 50ms linear;
     }
   }
 
@@ -116,10 +116,14 @@ export const HeaderStyled = styled.header`
       padding-left: 31px;
       transform: translateY(-100px);
     }
+    input,
+    .searchWrapper,
+    .iconWrapper {
+      height: 41px;
+    }
     .searchWrapper,
     input {
       width: 314px;
-      height: 41px;
     }
     input::placeholder {
       font-size: 16px;
@@ -129,7 +133,6 @@ export const HeaderStyled = styled.header`
       top: 0px;
       right: 0px;
       width: 50px;
-      height: 41px;
       padding: 12px;
     }
   }

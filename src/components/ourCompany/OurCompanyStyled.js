@@ -13,7 +13,6 @@ export const OurCompanyStyled = styled.section`
   h3::after {
     height: 2px;
     width: 60px;
-    margin: 0 auto;
     transform: translateY(5px);
   }
   li,

@@ -4,21 +4,30 @@ import { size } from "../../common/deviceSizes";
 
 export const SliderStyled = styled.section`
   position: relative;
+
+  .slider,
+  .sliderElem,
+  .sliderElem img {
+    height: 216px;
+  }
   .slider {
     position: relative;
-    height: 216px;
     margin-bottom: 20px;
     overflow: hidden;
   }
-  .sliderElem {
-    position: absolute;
+  .sliderElem,
+  .sliderElem img {
     width: 100%;
-    height: 216px;
+  }
+  h2,
+  .sliderElem,
+  .dotsList {
+    position: absolute;
+  }
+  .sliderElem {
     transition: all 200ms;
   }
   .sliderElem img {
-    width: 100%;
-    height: 216px;
     object-fit: cover;
   }
   .slidePrev {
@@ -27,9 +36,7 @@ export const SliderStyled = styled.section`
   .slideNext {
     transform: translateX(100%);
   }
-
   h2 {
-    position: absolute;
     bottom: 52px;
     height: 110px;
     width: 252px;
@@ -52,7 +59,6 @@ export const SliderStyled = styled.section`
     transform: translateX(-16px);
   }
   .dotsList {
-    position: absolute;
     display: flex;
     bottom: 10px;
     left: calc(50% - 32px);
@@ -75,12 +81,12 @@ export const SliderStyled = styled.section`
   }
 
   @media (min-width: ${size.desktop}) {
-    .slider {
-      height: 448px;
-      margin-bottom: 30px;
-    }
+    .slider,
     .sliderElem img {
       height: 448px;
+    }
+    .slider {
+      margin-bottom: 30px;
     }
     h2 {
       height: 260px;

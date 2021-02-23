@@ -4,6 +4,7 @@ import { size } from "../../common/deviceSizes";
 
 export const NavigationStyled = styled.nav`
   position: relative;
+
   .container,
   .wrapperMenu {
     display: flex;
@@ -26,25 +27,24 @@ export const NavigationStyled = styled.nav`
 
   @media (max-width: ${size.beforeDesktop}) {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 580px;
     background: ${colors.background};
     padding-top: 15px;
     z-index: 100;
 
-    .wrapperMenu::after {
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: ${colors.decorMenu};
-      margin-bottom: 20px;
-    }
+    .wrapperMenu::after,
     .menuElem::after {
-      display: block;
       content: "";
       width: 328px;
       height: 1px;
       background-color: ${colors.decorMenu};
+    }
+    .wrapperMenu::after {
+      margin-bottom: 20px;
+    }
+    .menuElem::after {
+      display: block;
       margin-top: 20px;
     }
     .menuElem:not(:last-of-type) {
@@ -68,9 +68,12 @@ export const NavigationStyled = styled.nav`
     .menuElem:not(:first-child) {
       transform: translateY(-30px);
     }
+    .menuLink::after,
     .menuElem:not(:first-child)::before {
       display: block;
       content: "";
+    }
+    .menuElem:not(:first-child)::before {
       width: 1px;
       height: 95px;
       background-color: ${colors.search};
@@ -83,8 +86,6 @@ export const NavigationStyled = styled.nav`
       color: ${colors.textTitle};
     }
     .menuLink::after {
-      display: block;
-      content: "";
       width: 100%;
       height: 2px;
       margin-top: 7px;

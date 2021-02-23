@@ -66,7 +66,6 @@ function Footer() {
           </li>
         </ul>
 
-        {/* //!CONYACTS */}
         <div className="contacts">
           <h4 className="contactsTitle">Контактная информация</h4>
           {isMobileDevice ? (
