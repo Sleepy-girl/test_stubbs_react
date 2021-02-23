@@ -8,13 +8,13 @@ export const FlagsStyled = styled.div`
     justify-content: space-between;
     width: 134px;
   }
-
-  .flagIcons {
-    height: 21px;
-  }
   .flagElem,
   .flagIcons {
     width: 31px;
+  }
+  .flagIcons {
+    height: 21px;
+    transform: scale(1.5);
   }
   .apacity {
     opacity: 0.3;
@@ -23,28 +23,35 @@ export const FlagsStyled = styled.div`
   @media (min-width: ${size.desktop}) {
     ul {
       position: absolute;
-      top: 67px;
+      top: 64px;
       left: 1212px;
       width: 51px;
       flex-wrap: wrap;
       z-index: 2;
     }
-
-    li:not(:first-child) {
+    li:first-child {
+      margin-bottom: 30px;
+    }
+    .substrate::after {
+      position: absolute;
+      display: block;
+      content: "";
+      bottom: -1px;
+      left: -10px;
+      width: 51px;
+      height: 82px;
       background-color: ${colors.flagsBackground};
     }
-    /* .arrowWrapper {
-      width: 20px;
-      height: 20px;
-      margin: auto;
-    } */
+    li:not(:first-child) {
+      margin-bottom: 15px;
+    }
     .iconArrowDown {
       position: absolute;
-      top: 67px;
+      top: 64px;
       left: 1256px;
-      width: 34px;
-      height: 28px;
-      padding: 10px;
+      width: 26px;
+      height: 20px;
+      padding: 6px;
       fill: ${colors.decor};
       cursor: pointer;
     }

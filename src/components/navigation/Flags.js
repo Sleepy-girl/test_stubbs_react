@@ -17,13 +17,9 @@ function Flags() {
   const handleClick = (e) => {
     e.preventDefault();
     const { id } = e.target;
-    console.log("e.target", e.target);
-    console.log("flag-before", flag);
     if (isDesktopDevice && id === "iconArrowDown") {
       setFlags((prev) => ({ ...prev, isShow: !prev.isShow }));
-      // console.log("flag-after", flag);
       return;
-      // console.log(flag.isShow);
     }
     setFlags({
       iconFlagOfRussia: false,
@@ -36,9 +32,93 @@ function Flags() {
 
   return (
     <FlagsStyled className="flagList">
-      {flag.isShow && (
+      {isDesktopDevice && (
         <ul>
-          <li className="flagElem" onClick={handleClick}>
+          <li
+            className={`flagElem ${flag.isShow && "substrate"}`}
+            onClick={handleClick}
+          >
+            <svg className="flagIcons">
+              <use
+                id={`${
+                  (flag.iconFlagOfRussia && "iconFlagOfRussia") ||
+                  (flag.iconFlagOfUkraine && "iconFlagOfUkraine") ||
+                  (flag.iconUnitedKingdom && "iconUnitedKingdom")
+                }`}
+                href={
+                  sprite +
+                  `${
+                    (flag.iconFlagOfRussia && "#iconFlagOfRussia") ||
+                    (flag.iconFlagOfUkraine && "#iconFlagOfUkraine") ||
+                    (flag.iconUnitedKingdom && "#iconUnitedKingdom")
+                  }
+                  `
+                }
+              />
+            </svg>
+          </li>
+          {flag.isShow && (
+            <>
+              <li className="flagElem" onClick={handleClick}>
+                <svg className="flagIcons">
+                  <use
+                    id={`${
+                      (flag.iconFlagOfRussia && "iconFlagOfUkraine") ||
+                      (flag.iconFlagOfUkraine && "iconFlagOfRussia") ||
+                      (flag.iconUnitedKingdom && "iconFlagOfUkraine")
+                    }`}
+                    href={
+                      sprite +
+                      `${
+                        (flag.iconFlagOfRussia && "#iconFlagOfUkraine") ||
+                        (flag.iconFlagOfUkraine && "#iconFlagOfRussia") ||
+                        (flag.iconUnitedKingdom && "#iconFlagOfUkraine")
+                      }`
+                    }
+                  />
+                </svg>
+              </li>
+              <li className="flagElem" onClick={handleClick}>
+                <svg className="flagIcons">
+                  <use
+                    id={`${
+                      (flag.iconFlagOfRussia && "iconUnitedKingdom") ||
+                      (flag.iconFlagOfUkraine && "iconUnitedKingdom") ||
+                      (flag.iconUnitedKingdom && "iconFlagOfRussia")
+                    }`}
+                    href={
+                      sprite +
+                      `${
+                        (flag.iconFlagOfRussia && "#iconUnitedKingdom") ||
+                        (flag.iconFlagOfUkraine && "#iconUnitedKingdom") ||
+                        (flag.iconUnitedKingdom && "#iconFlagOfRussia")
+                      }`
+                    }
+                  />
+                </svg>
+              </li>
+            </>
+          )}
+        </ul>
+      )}
+
+      {isDesktopDevice && (
+        <svg
+          className={`iconArrowDown ${flag.isShow ? "arrowChange" : ""}`}
+          id="iconArrowDown"
+          onClick={handleClick}
+        >
+          <use href={sprite + "#iconArrowDown"} />
+        </svg>
+      )}
+    </FlagsStyled>
+  );
+}
+
+export default Flags;
+
+//! ----------------------------------------
+/* <li className="flagElem" onClick={handleClick}>
             <svg className={`flagIcons ${!flag.iconFlagOfRussia && "apacity"}`}>
               <use id="iconFlagOfRussia" href={sprite + "#iconFlagOfRussia"} />
             </svg>
@@ -62,24 +142,8 @@ function Flags() {
                 href={sprite + "#iconUnitedKingdom"}
               />
             </svg>
-          </li>
-        </ul>
-      )}
-      {isDesktopDevice && (
-        <svg
-          className={`iconArrowDown ${flag.isShow ? "arrowChange" : ""}`}
-          id="iconArrowDown"
-          onClick={handleClick}
-        >
-          <use href={sprite + "#iconArrowDown"} />
-        </svg>
-      )}
-    </FlagsStyled>
-  );
-}
-
-export default Flags;
-
+          </li> */
+//!------------------------------------------------
 /* <FlagsStyled className="flagList">
 <ul>
   <li className="flagElem">
