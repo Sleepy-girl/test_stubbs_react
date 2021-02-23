@@ -1,31 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useDeviceSizes from "../../hooks/useDeviceSizes";
 import { elems, elemsDesktop } from "./dataServices";
-// import smallDear from "../../assets/images/services/dears/smallDear.svg";
-// import largeDear from "../../assets/images/services/dears/largeDear.svg";
 import sprite from "../../assets/images/icons-sprite.svg";
 import { ServicesStyled } from "./ServicesStyled";
 
 function Services() {
   const { isMobileDevice, isDesktopDevice } = useDeviceSizes();
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      setOffset(window.pageYOffset);
+    };
+  }, []);
 
   return (
     <ServicesStyled>
       {isDesktopDevice && (
-        <>
-          <svg className="topLeftDear">
+        <div className="dearWrapper">
+          <svg
+            className="topLeftDear"
+            style={{ transform: `rotate(${offset}deg)` }}
+          >
             <use href={sprite + "#dear"} />
           </svg>
-          <svg className="bottomLeftDear">
+          <svg
+            className="bottomLeftDear"
+            style={{ transform: `rotate(${offset}deg)` }}
+          >
             <use href={sprite + "#dear"} />
           </svg>
-          <svg className="topRightDear">
+          <svg
+            className="topRightDear"
+            style={{ transform: `rotate(${offset}deg)` }}
+          >
             <use href={sprite + "#dear"} />
           </svg>
-          <svg className="bottomRightDear">
+          <svg
+            className="bottomRightDear"
+            style={{ transform: `rotate(${offset}deg)` }}
+          >
             <use href={sprite + "#dear"} />
           </svg>
-        </>
+        </div>
       )}
       <h3>Услуги</h3>
       <ul className="fistPart">

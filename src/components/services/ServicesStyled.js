@@ -98,31 +98,34 @@ export const ServicesStyled = styled.section`
     }
   }
   @media (min-width: ${size.desktop}) {
-    position: relative;
     margin-bottom: 40px;
-
+    .dearWrapper {
+      position: relative;
+      width: 1180px;
+      margin: 0 auto;
+    }
     svg {
       position: absolute;
       fill: ${colors.dears};
     }
     .topLeftDear {
-      left: 12px;
-      top: 200px;
+      left: -78px;
+      top: 216px;
       transform: rotate(-15deg);
     }
     .bottomLeftDear {
-      left: 22px;
-      top: 434px;
+      left: -66px;
+      top: 440px;
       transform: rotate(-15deg);
     }
     .topRightDear {
-      right: 10px;
-      top: 184px;
+      right: -84px;
+      top: 186px;
       transform: rotate(45deg);
     }
     .bottomRightDear {
-      right: 46px;
-      top: 386px;
+      right: -46px;
+      top: 396px;
       transform: rotate(45deg);
     }
     .topLeftDear,
