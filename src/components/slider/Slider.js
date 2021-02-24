@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useDeviceSizes from "../../hooks/useDeviceSizes";
-import slideMobile1 from "../../assets/images/slider/mobile/Rectangle.jpg";
-import slideMobile2 from "../../assets/images/slider/mobile/slide2.jpg";
-import slideMobile3 from "../../assets/images/slider/mobile/slide3.jpg";
-import slideMobile4 from "../../assets/images/slider/mobile/slide4.jpg";
-import slideDesktop1 from "../../assets/images/slider/forDesktop/slide1.jpg";
-import slideDesktop2 from "../../assets/images/slider/forDesktop/slide2.jpg";
-import slideDesktop3 from "../../assets/images/slider/forDesktop/slide3.jpg";
-import slideDesktop4 from "../../assets/images/slider/forDesktop/slide4.jpg";
+import { slides } from "./dataSlides";
 import { SliderStyled } from "./SliderStyled";
 
 function SliderComponent() {
@@ -16,26 +9,26 @@ function SliderComponent() {
 
   const slideImg = [
     <img
-      key={slideMobile1}
-      src={isMobileDevice ? slideMobile1 : slideDesktop1}
+      key={slides.mobile1}
+      src={isMobileDevice ? slides.mobile1 : slides.desktop1}
       alt="firstSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
     <img
-      key={slideMobile2}
-      src={isMobileDevice ? slideMobile2 : slideDesktop2}
+      key={slides.mobile2}
+      src={isMobileDevice ? slides.mobile2 : slides.desktop2}
       alt="firstSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
     <img
-      key={slideMobile3}
-      src={isMobileDevice ? slideMobile3 : slideDesktop3}
+      key={slides.mobile3}
+      src={isMobileDevice ? slides.mobile3 : slides.desktop3}
       alt="firstSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
     <img
-      key={slideMobile4}
-      src={isMobileDevice ? slideMobile4 : slideDesktop4}
+      key={slides.mobile4}
+      src={isMobileDevice ? slides.mobile4 : slides.desktop4}
       alt="firstSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
