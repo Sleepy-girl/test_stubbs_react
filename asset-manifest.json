@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/test_stubbs_react/static/css/main.79168dba.chunk.css",
-    "main.js": "/test_stubbs_react/static/js/main.d2186ff5.chunk.js",
-    "main.js.map": "/test_stubbs_react/static/js/main.d2186ff5.chunk.js.map",
+    "main.js": "/test_stubbs_react/static/js/main.1d703961.chunk.js",
+    "main.js.map": "/test_stubbs_react/static/js/main.1d703961.chunk.js.map",
     "runtime-main.js": "/test_stubbs_react/static/js/runtime-main.3dcf6d7d.js",
     "runtime-main.js.map": "/test_stubbs_react/static/js/runtime-main.3dcf6d7d.js.map",
-    "static/js/2.c6465698.chunk.js": "/test_stubbs_react/static/js/2.c6465698.chunk.js",
-    "static/js/2.c6465698.chunk.js.map": "/test_stubbs_react/static/js/2.c6465698.chunk.js.map",
+    "static/js/2.578adafe.chunk.js": "/test_stubbs_react/static/js/2.578adafe.chunk.js",
+    "static/js/2.578adafe.chunk.js.map": "/test_stubbs_react/static/js/2.578adafe.chunk.js.map",
     "index.html": "/test_stubbs_react/index.html",
     "static/css/main.79168dba.chunk.css.map": "/test_stubbs_react/static/css/main.79168dba.chunk.css.map",
-    "static/js/2.c6465698.chunk.js.LICENSE.txt": "/test_stubbs_react/static/js/2.c6465698.chunk.js.LICENSE.txt",
+    "static/js/2.578adafe.chunk.js.LICENSE.txt": "/test_stubbs_react/static/js/2.578adafe.chunk.js.LICENSE.txt",
     "static/media/main.css": "/test_stubbs_react/static/media/roboto-v20-latin_cyrillic-regular.f3cc56e1.woff2",
     "static/media/Rectangle.6a06a91b.jpg": "/test_stubbs_react/static/media/Rectangle.6a06a91b.jpg",
     "static/media/icons-sprite.ffe67c4b.svg": "/test_stubbs_react/static/media/icons-sprite.ffe67c4b.svg",
@@ -43,8 +43,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3dcf6d7d.js",
-    "static/js/2.c6465698.chunk.js",
+    "static/js/2.578adafe.chunk.js",
     "static/css/main.79168dba.chunk.css",
-    "static/js/main.d2186ff5.chunk.js"
+    "static/js/main.1d703961.chunk.js"
   ]
 }
