@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useDeviceSizes from "../../hooks/useDeviceSizes";
 import sprite from "../../assets/images/icons-sprite.svg";
 import { FlagsStyled } from "./FlagsStyled";
+import FlagsItem from "./FlagsItem";
 
 const initialState = {
   currentFlagId: "iconFlagOfRussia",
@@ -35,15 +36,13 @@ function Flags() {
       {isMobileDevice && (
         <ul>
           {flagItems.map((item) => (
-            <li className="flagElem" id={item} key={item}>
-              <svg
-                className={`flagIcons ${
-                  flag.currentFlagId !== item && "opacity"
-                }`}
-              >
-                <use href={`${sprite}#${item}`} onClick={handleClick} />
-              </svg>
-            </li>
+            <FlagsItem
+              key={item}
+              isMobileDevice={isMobileDevice}
+              flag={flag}
+              item={item}
+              handleClick={handleClick}
+            />
           ))}
         </ul>
       )}
@@ -54,15 +53,12 @@ function Flags() {
             {flagItems.map((item) => {
               return (
                 flag.currentFlagId === item && (
-                  <li
-                    className={`flagElem ${flag.isShow && "substrate"}`}
+                  <FlagsItem
                     key={item}
-                    id={`${item}`}
-                  >
-                    <svg className="flagIcons">
-                      <use href={sprite + `#${item}`} onClick={handleClick} />
-                    </svg>
-                  </li>
+                    flag={flag}
+                    item={item}
+                    handleClick={handleClick}
+                  />
                 )
               );
             })}
@@ -70,11 +66,12 @@ function Flags() {
               flagItems.map((item) => {
                 return (
                   flag.currentFlagId !== item && (
-                    <li className={`flagElem`} key={item} id={`${item}`}>
-                      <svg className="flagIcons">
-                        <use href={sprite + `#${item}`} onClick={handleClick} />
-                      </svg>
-                    </li>
+                    <FlagsItem
+                      key={item}
+                      flag={flag}
+                      item={item}
+                      handleClick={handleClick}
+                    />
                   )
                 );
               })}

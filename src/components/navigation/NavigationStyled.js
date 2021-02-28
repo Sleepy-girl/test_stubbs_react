@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { colors } from "../../stylesheet/vars";
-// import { size } from "../../common/deviceSizes";
 import { size } from "../../common/deviceSizes";
 
 export const NavigationStyled = styled.nav`
