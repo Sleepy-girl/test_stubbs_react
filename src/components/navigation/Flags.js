@@ -4,9 +4,7 @@ import sprite from "../../assets/images/icons-sprite.svg";
 import { FlagsStyled } from "./FlagsStyled";
 
 const initialState = {
-  iconFlagOfRussia: true,
-  iconFlagOfUkraine: false,
-  iconUnitedKingdom: false,
+  currentFlagId: "iconFlagOfRussia",
   isShow: false,
 };
 
@@ -21,11 +19,8 @@ function Flags() {
       return;
     }
     setFlags({
-      iconFlagOfRussia: false,
-      iconFlagOfUkraine: false,
-      iconUnitedKingdom: false,
       isShow: false,
-      [id]: true,
+      currentFlagId: id,
     });
   };
 
@@ -41,7 +36,11 @@ function Flags() {
         <ul>
           {flagItems.map((item) => (
             <li className="flagElem" id={item} key={item}>
-              <svg className={`flagIcons ${!flag[item] && "opacity"}`}>
+              <svg
+                className={`flagIcons ${
+                  flag.currentFlagId !== item && "opacity"
+                }`}
+              >
                 <use href={`${sprite}#${item}`} onClick={handleClick} />
               </svg>
             </li>
@@ -52,78 +51,35 @@ function Flags() {
       {isDesktopDevice && (
         <>
           <ul>
-            <li
-              className={`flagElem ${flag.isShow && "substrate"}`}
-              id={`${
-                (flag.iconFlagOfRussia && "iconFlagOfRussia") ||
-                (flag.iconFlagOfUkraine && "iconFlagOfUkraine") ||
-                (flag.iconUnitedKingdom && "iconUnitedKingdom")
-              }`}
-            >
-              <svg className="flagIcons">
-                <use
-                  href={
-                    sprite +
-                    `${
-                      (flag.iconFlagOfRussia && "#iconFlagOfRussia") ||
-                      (flag.iconFlagOfUkraine && "#iconFlagOfUkraine") ||
-                      (flag.iconUnitedKingdom && "#iconUnitedKingdom")
-                    }
-                  `
-                  }
-                  onClick={handleClick}
-                />
-              </svg>
-            </li>
-            {flag.isShow && (
-              <>
-                <li
-                  className="flagElem"
-                  id={`${
-                    (flag.iconFlagOfRussia && "iconFlagOfUkraine") ||
-                    (flag.iconFlagOfUkraine && "iconFlagOfRussia") ||
-                    (flag.iconUnitedKingdom && "iconFlagOfUkraine")
-                  }`}
-                >
-                  <svg className="flagIcons">
-                    <use
-                      href={
-                        sprite +
-                        `${
-                          (flag.iconFlagOfRussia && "#iconFlagOfUkraine") ||
-                          (flag.iconFlagOfUkraine && "#iconFlagOfRussia") ||
-                          (flag.iconUnitedKingdom && "#iconFlagOfUkraine")
-                        }`
-                      }
-                      onClick={handleClick}
-                    />
-                  </svg>
-                </li>
-                <li
-                  className="flagElem"
-                  id={`${
-                    (flag.iconFlagOfRussia && "iconUnitedKingdom") ||
-                    (flag.iconFlagOfUkraine && "iconUnitedKingdom") ||
-                    (flag.iconUnitedKingdom && "iconFlagOfRussia")
-                  }`}
-                >
-                  <svg className="flagIcons">
-                    <use
-                      href={
-                        sprite +
-                        `${
-                          (flag.iconFlagOfRussia && "#iconUnitedKingdom") ||
-                          (flag.iconFlagOfUkraine && "#iconUnitedKingdom") ||
-                          (flag.iconUnitedKingdom && "#iconFlagOfRussia")
-                        }`
-                      }
-                      onClick={handleClick}
-                    />
-                  </svg>
-                </li>
-              </>
-            )}
+            {flagItems.map((item) => {
+              return (
+                flag.currentFlagId === item && (
+                  <li
+                    className={`flagElem ${flag.isShow && "substrate"}`}
+                    key={item}
+                    id={`${item}`}
+                  >
+                    <svg className="flagIcons">
+                      <use href={sprite + `#${item}`} onClick={handleClick} />
+                    </svg>
+                  </li>
+                )
+              );
+            })}
+            {flag.isShow &&
+              flagItems.map((item) => {
+                return (
+                  flag.currentFlagId !== item && (
+                    <li className={`flagElem`} key={item} id={`${item}`}>
+                      <svg className="flagIcons">
+                        <use href={sprite + `#${item}`} onClick={handleClick} />
+                      </svg>
+                    </li>
+                  )
+                );
+              })}
           </ul>
+
           <svg
             className={`iconArrowDown ${flag.isShow ? "arrowChange" : ""}`}
             id="iconArrowDown"
