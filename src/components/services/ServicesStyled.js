@@ -121,25 +121,29 @@ export const ServicesStyled = styled.section`
       position: absolute;
       fill: ${colors.dears};
     }
+    .topLeftDear,
+    .bottomLeftDear {
+      transform: rotate(${(props) => (props.offset ? props.offset : -15)}deg);
+    }
     .topLeftDear {
       left: -78px;
       top: 216px;
-      transform: rotate(-15deg);
     }
     .bottomLeftDear {
       left: -66px;
       top: 440px;
-      transform: rotate(-15deg);
+    }
+    .topRightDear,
+    .bottomRightDear {
+      transform: rotate(${(props) => (props.offset ? props.offset : 45)}deg);
     }
     .topRightDear {
       right: -84px;
       top: 186px;
-      transform: rotate(45deg);
     }
     .bottomRightDear {
       right: -46px;
       top: 396px;
-      transform: rotate(45deg);
     }
     .topLeftDear,
     .bottomRightDear {

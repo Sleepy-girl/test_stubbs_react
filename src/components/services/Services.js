@@ -13,31 +13,19 @@ function Services() {
   }, []);
 
   return (
-    <ServicesStyled>
+    <ServicesStyled offset={offset}>
       {isDesktopDevice && (
         <div className="dearWrapper">
-          <svg
-            className="topLeftDear"
-            style={{ transform: `rotate(${offset}deg)` }}
-          >
+          <svg className="topLeftDear">
             <use href={sprite + "#dear"} />
           </svg>
-          <svg
-            className="bottomLeftDear"
-            style={{ transform: `rotate(${offset}deg)` }}
-          >
+          <svg className="bottomLeftDear">
             <use href={sprite + "#dear"} />
           </svg>
-          <svg
-            className="topRightDear"
-            style={{ transform: `rotate(${offset}deg)` }}
-          >
+          <svg className="topRightDear">
             <use href={sprite + "#dear"} />
           </svg>
-          <svg
-            className="bottomRightDear"
-            style={{ transform: `rotate(${offset}deg)` }}
-          >
+          <svg className="bottomRightDear">
             <use href={sprite + "#dear"} />
           </svg>
         </div>

@@ -17,19 +17,19 @@ function SliderComponent() {
     <img
       key={slides.mobile2}
       src={isMobileDevice ? slides.mobile2 : slides.desktop2}
-      alt="firstSlide"
+      alt="secondSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
     <img
       key={slides.mobile3}
       src={isMobileDevice ? slides.mobile3 : slides.desktop3}
-      alt="firstSlide"
+      alt="thirdSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
     <img
       key={slides.mobile4}
       src={isMobileDevice ? slides.mobile4 : slides.desktop4}
-      alt="firstSlide"
+      alt="fourthSlide"
       height={isMobileDevice ? "216" : "448"}
     />,
   ];
@@ -39,7 +39,6 @@ function SliderComponent() {
     activeIndex === slideImg.length - 1 ? 0 : activeIndex + 1;
 
   const handleClick = (e) => {
-    e.preventDefault();
     const { id } = e.target;
     setActiveIndex(id - 1);
   };
