@@ -16,7 +16,7 @@ export const FlagsStyled = styled.div`
     height: 21px;
     transform: scale(1.5);
   }
-  .apacity {
+  .opacity {
     opacity: 0.3;
   }
 

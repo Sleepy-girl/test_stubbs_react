@@ -15,8 +15,7 @@ function Flags() {
   const { isMobileDevice, isDesktopDevice } = useDeviceSizes();
 
   const handleClick = (e) => {
-    e.preventDefault();
-    const { id } = e.target;
+    const id = e.target.closest("[id]").id;
     if (isDesktopDevice && id === "iconArrowDown") {
       setFlags((prev) => ({ ...prev, isShow: !prev.isShow }));
       return;
@@ -30,35 +29,23 @@ function Flags() {
     });
   };
 
+  const flagItems = [
+    "iconFlagOfRussia",
+    "iconFlagOfUkraine",
+    "iconUnitedKingdom",
+  ];
+
   return (
     <FlagsStyled className="flagList">
       {isMobileDevice && (
         <ul>
-          <li className="flagElem" onClick={handleClick}>
-            <svg className={`flagIcons ${!flag.iconFlagOfRussia && "apacity"}`}>
-              <use id="iconFlagOfRussia" href={sprite + "#iconFlagOfRussia"} />
-            </svg>
-          </li>
-          <li className="flagElem" onClick={handleClick}>
-            <svg
-              className={`flagIcons ${!flag.iconFlagOfUkraine && "apacity"}`}
-            >
-              <use
-                id="iconFlagOfUkraine"
-                href={sprite + "#iconFlagOfUkraine"}
-              />
-            </svg>
-          </li>
-          <li className="flagElem" onClick={handleClick}>
-            <svg
-              className={`flagIcons ${!flag.iconUnitedKingdom && "apacity"}`}
-            >
-              <use
-                id="iconUnitedKingdom"
-                href={sprite + "#iconUnitedKingdom"}
-              />
-            </svg>
-          </li>
+          {flagItems.map((item) => (
+            <li className="flagElem" id={item} key={item}>
+              <svg className={`flagIcons ${!flag[item] && "opacity"}`}>
+                <use href={`${sprite}#${item}`} onClick={handleClick} />
+              </svg>
+            </li>
+          ))}
         </ul>
       )}
 
@@ -67,15 +54,14 @@ function Flags() {
           <ul>
             <li
               className={`flagElem ${flag.isShow && "substrate"}`}
-              onClick={handleClick}
+              id={`${
+                (flag.iconFlagOfRussia && "iconFlagOfRussia") ||
+                (flag.iconFlagOfUkraine && "iconFlagOfUkraine") ||
+                (flag.iconUnitedKingdom && "iconUnitedKingdom")
+              }`}
             >
               <svg className="flagIcons">
                 <use
-                  id={`${
-                    (flag.iconFlagOfRussia && "iconFlagOfRussia") ||
-                    (flag.iconFlagOfUkraine && "iconFlagOfUkraine") ||
-                    (flag.iconUnitedKingdom && "iconUnitedKingdom")
-                  }`}
                   href={
                     sprite +
                     `${
@@ -85,19 +71,22 @@ function Flags() {
                     }
                   `
                   }
+                  onClick={handleClick}
                 />
               </svg>
             </li>
             {flag.isShow && (
               <>
-                <li className="flagElem" onClick={handleClick}>
+                <li
+                  className="flagElem"
+                  id={`${
+                    (flag.iconFlagOfRussia && "iconFlagOfUkraine") ||
+                    (flag.iconFlagOfUkraine && "iconFlagOfRussia") ||
+                    (flag.iconUnitedKingdom && "iconFlagOfUkraine")
+                  }`}
+                >
                   <svg className="flagIcons">
                     <use
-                      id={`${
-                        (flag.iconFlagOfRussia && "iconFlagOfUkraine") ||
-                        (flag.iconFlagOfUkraine && "iconFlagOfRussia") ||
-                        (flag.iconUnitedKingdom && "iconFlagOfUkraine")
-                      }`}
                       href={
                         sprite +
                         `${
@@ -106,17 +95,20 @@ function Flags() {
                           (flag.iconUnitedKingdom && "#iconFlagOfUkraine")
                         }`
                       }
+                      onClick={handleClick}
                     />
                   </svg>
                 </li>
-                <li className="flagElem" onClick={handleClick}>
+                <li
+                  className="flagElem"
+                  id={`${
+                    (flag.iconFlagOfRussia && "iconUnitedKingdom") ||
+                    (flag.iconFlagOfUkraine && "iconUnitedKingdom") ||
+                    (flag.iconUnitedKingdom && "iconFlagOfRussia")
+                  }`}
+                >
                   <svg className="flagIcons">
                     <use
-                      id={`${
-                        (flag.iconFlagOfRussia && "iconUnitedKingdom") ||
-                        (flag.iconFlagOfUkraine && "iconUnitedKingdom") ||
-                        (flag.iconUnitedKingdom && "iconFlagOfRussia")
-                      }`}
                       href={
                         sprite +
                         `${
@@ -125,6 +117,7 @@ function Flags() {
                           (flag.iconUnitedKingdom && "#iconFlagOfRussia")
                         }`
                       }
+                      onClick={handleClick}
                     />
                   </svg>
                 </li>
